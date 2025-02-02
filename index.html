@@ -3,10 +3,50 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Exercicio de interatividade</title>
+
+        <title>Projeto DigBank</title>
+        <link rel="stylesheet" href="main.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+
     </head>
 
+
     <body>
+
+        <div class="container">
+
+            <h1>DigBank</h1>
+            <h2>Sua carteira digital</h2>
+
+            <form id="form-valid" autocomplete="off">
+
+                <input id='user' type="text" placeholder="Digite seu nome" />
+
+                <input class="credenciais error-1" id="primeira-credencial" type="number"
+                    placeholder="Digite sua credencial simples" />
+
+                <p class="message-error">Só é válida crendencial simples </p>
+
+                <input class="credenciais error-2" id="segunda-credencial" type="number"
+                    placeholder="Digite sua credencial composta" />
+
+                <p class="message-error-2">Só é válida crendencial composta </p>
+
+
+                <button type="submit">Acessar carteira</button>
+
+                <p class="messege-sucess"> </p>
+
+
+            </form>
+
+        </div>
+
+        <script src="script.js"></script>
 
     </body>
 
