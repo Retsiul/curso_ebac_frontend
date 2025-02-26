@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>Agenta de contatos</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <form id="form">
+
+            <h1>Agenda de contatos</h1>
+
+            <div class="input-button">
+
+                <div class="dados-de-entrada">
+
+                    <input id="nome" placeholder="Nome" type="text" autocomplete="off" required />
+                    <input id="ddd" placeholder="(DDD)" type="number" min="11" max="99" />
+                    <input id="num" placeholder="Número" type="tel" autocomplete="off" />
+
+                </div>
+
+                <div class="button-error">
+                    <button class="button valid"><img src="images/1739754139726.png" /> </button>
+                    <p class="error">É aceito apenas <br />caracteres numéricos</p>
+                </div>
+
+            </div>
+
+        </form>
+
+        <div class="table">
+
+            <h2>Meus contatos</h2>
+
+            <table cellspacing="0" id="tabela">
+
+                <thead>
+                    <tr>
+                        <th>
+                            <span>
+                                nome
+                            </span>
+                        </th>
+                        <th>
+                            <span>
+                                numero do contato
+                            </span>
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+        <script src="main.js"> </script>
+
+</body>
+
+</html>
