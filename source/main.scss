@@ -1,5 +1,6 @@
 @use 'config/reset';
 @use 'config/variaveis';
+@use 'telas/media' as*;
 
 @mixin tamConatiner(){
     max-width: 1024px;
@@ -10,8 +11,14 @@
 @mixin list{
     list-style: none;
 }
+
+html{
+    @include resp();
+}
 body{
-    background-color:variaveis.$corDefundo;
+   background-color:variaveis.$corDefundo;
+
+ 
 }
 header{
     background-color: #182C61;
@@ -77,23 +84,5 @@ section{
     }
 }
 
-@media screen and (max-width: 1023px) {
-    .container {
-        max-width: 80%;
-    }
+// @import 'telas/media';
 
-    .products {
-        grid-template-columns: repeat(2, 48.5%);
-        column-gap: 3%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .products {
-        display: block;
-    }
-
-    .product-item  {
-        margin-bottom: 32px;
-    }
-}

@@ -5,6 +5,30 @@
   font-family: Roboto, sans-serif;
 }
 
+@media screen and (max-width: 1023px) {
+  html body {
+    background-color: rgb(192, 192, 192);
+  }
+  html .container {
+    max-width: 80%;
+  }
+  html .products {
+    grid-template-columns: repeat(2, 48.5%);
+    column-gap: 3%;
+  }
+}
+@media screen and (max-width: 767px) {
+  html body {
+    background-color: rgb(211, 215.4, 233);
+  }
+  html .products {
+    display: block;
+  }
+  html .product-item {
+    margin-bottom: 32px;
+  }
+}
+
 body {
   background-color: #f5f6fa;
 }
@@ -72,24 +96,6 @@ section .container ul li a {
 }
 section .container ul li a:hover {
   background-color: rgb(60.7447698745, 168.8347280335, 44.6652719665);
-}
-
-@media screen and (max-width: 1023px) {
-  .container {
-    max-width: 80%;
-  }
-  .products {
-    grid-template-columns: repeat(2, 48.5%);
-    column-gap: 3%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .products {
-    display: block;
-  }
-  .product-item {
-    margin-bottom: 32px;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
