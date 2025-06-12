@@ -1,0 +1,37 @@
+{
+  "name": "curso_ebac_frontend",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "glob-watcher": "^6.0.0",
+    "gulp-cli": "^3.1.0",
+    "readdirp": "^3.6.0",
+    "undertaker": "^2.0.0",
+    "vinyl-fs": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin": "^8.0.0",
+    "sass": "^1.89.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Retsiul/curso_ebac_frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Retsiul/curso_ebac_frontend/issues"
+  },
+  "homepage": "https://github.com/Retsiul/curso_ebac_frontend#readme",
+  "description": ""
+}
