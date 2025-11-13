@@ -78,11 +78,7 @@
 
             async function dataLoading() {
                 try {
-                    const response = await fetch("https://api.github.com/users/Retsiul", {
-                        headers: {
-                            "Authorization": "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"
-                        }
-                    })
+                    const response = await fetch("https://api.github.com/users/Retsiul")
                     if (!response.ok) {
 
                         throw new Error(`erro:${response.status}`)
