@@ -11,24 +11,27 @@
 
 <body>
     <header>
+
+        <h2 class="error">ERRor</h2>
+        <h2 class="message"></h2>
         <div class="container">
 
             <img id="avatar" class="profile-avatar" src="https://placehold.co/180x180" alt=".">
-            <img class="background-avatar" src="/transferir.png" alt=".">
+            <img class="background-avatar" src="img/transferir.png" alt=".">
             <span class="shadow-profile-name">
                 <h1 class="profile-name"><span id="name"></span></h1>
 
                 <h2 id="username" class="profile-username"></h2>
                 <ul class="numbers">
-                    <li  class="numbers-item">
+                    <li class="numbers-item">
                         <h4>Repositórios</h4>
-                        <span class="span2" id="resp2" ></span>
+                        <span class="span2" id="resp2"></span>
                     </li>
-                    <li  class="numbers-item">
+                    <li class="numbers-item">
                         <h4>Seguidores</h4>
                         <span class="span2" id="followers2"></span>
                     </li>
-                    <li  class="numbers-item">
+                    <li class="numbers-item">
                         <h4>Seguindo</h4>
                         <span class="span2" id="following2"></span>
                     </li>
@@ -38,22 +41,22 @@
 
             <h1 class="profile-name"><span id="name2"></span></h1>
 
-              <h2 id="username2" class="profile-username"></h2>
+            <h2 id="username2" class="profile-username"></h2>
             <ul class="numbers">
                 <li class="numbers-item">
                     <h4>Repositórios</h4>
-                   <span id="resp" ></span>
+                    <span id="resp"></span>
                 </li>
                 <li class="numbers-item">
                     <h4>Seguidores</h4>
-                      <span id="followers"></span>
+                    <span id="followers"></span>
                 </li>
                 <li class="numbers-item">
                     <h4>Seguindo</h4>
-                      <span id="following"></span>
+                    <span id="following"></span>
                 </li>
             </ul>
-            <a id="link" href="#" class="profile-link" target="_blank" >Ver no Github</a>
+            <a id="link" href="#" class="profile-link" target="_blank">Ver no Github</a>
 
         </div>
     </header>
@@ -62,38 +65,55 @@
         document.addEventListener('DOMContentLoaded', function () {
             const avatar = document.querySelector('#avatar');
             const name = document.querySelector('#name');
+            const name2 = document.querySelector('#name2');
             const username = document.querySelector('#username');
+            const username2 = document.querySelector('#username2');
             const resp = document.querySelector("#resp");
-                     const resp2 = document.querySelector("#resp2");
+            const resp2 = document.querySelector("#resp2");
             const followers = document.querySelector("#followers");
             const followers2 = document.querySelector("#followers2");
             const following = document.querySelector("#following");
             const following2 = document.querySelector("#following2");
-            const link=document.querySelector('#link')
+            const link = document.querySelector('#link')
 
+            async function dataLoading() {
+                try {
+                    const response = await fetch("https://api.github.com/users/Retsiul", {
+                        headers: {
+                            "Authorization": "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"
+                        }
+                    })
+                    if (!response.ok) {
 
-            fetch("https://api.github.com/users/Retsiul")
-                .then(function (resposta) {
-                    return resposta.json();
-                })
-                .then(function (json) {
+                        throw new Error(`erro:${response.status}`)
+                    }
+                    const json = await response.json()
+
                     avatar.src = json.avatar_url
                     name.innerText = json.name
-                    name2.innerText = json.name
                     username.innerText = json.login
-                    username2.innerText = json.login
                     resp.innerText = json.public_repos
-                    resp2.innerText = json.public_repos
                     followers.innerText = json.followers
-                    followers2.innerText = json.followers
                     following.innerText = json.following
+                    name2.innerText = json.name
+                    username2.innerText = json.login
+                    resp2.innerText = json.public_repos
+                    followers2.innerText = json.followers
                     following2.innerText = json.following
-                    link.href=json.html_url
+                    link.href = json.html_url
+
+                } catch (erro) {
+                    console.log(erro.message)
+                    document.querySelector(".container").style.display = 'none';
+                    document.querySelector(".error").style.display = 'block';
+                    document.querySelector(".message").style.display = 'block';
+                    document.querySelector(".message").innerText = erro.message
 
 
+                }
+            }
 
-
-                })
+            dataLoading()
         })
     </script>
 </body>

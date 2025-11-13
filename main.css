@@ -42,6 +42,15 @@ header .container {
 
 }
 
+.error{
+    font-size: 300px;
+    display: none;
+}
+
+.message{
+    display: none;
+}
+
 .background-avatar {
     width: 300px;
     position: relative;
