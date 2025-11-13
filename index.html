@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Github</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <img id="avatar" class="profile-avatar" src="https://placehold.co/180x180" alt=".">
+            <img class="background-avatar" src="/transferir.png" alt=".">
+            <span class="shadow-profile-name">
+                <h1 class="profile-name"><span id="name"></span></h1>
+
+                <h2 id="username" class="profile-username"></h2>
+                <ul class="numbers">
+                    <li  class="numbers-item">
+                        <h4>Repositórios</h4>
+                        <span class="span2" id="resp2" ></span>
+                    </li>
+                    <li  class="numbers-item">
+                        <h4>Seguidores</h4>
+                        <span class="span2" id="followers2"></span>
+                    </li>
+                    <li  class="numbers-item">
+                        <h4>Seguindo</h4>
+                        <span class="span2" id="following2"></span>
+                    </li>
+                </ul>
+
+            </span>
+
+            <h1 class="profile-name"><span id="name2"></span></h1>
+
+              <h2 id="username2" class="profile-username"></h2>
+            <ul class="numbers">
+                <li class="numbers-item">
+                    <h4>Repositórios</h4>
+                   <span id="resp" ></span>
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguidores</h4>
+                      <span id="followers"></span>
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguindo</h4>
+                      <span id="following"></span>
+                </li>
+            </ul>
+            <a id="link" href="#" class="profile-link" target="_blank" >Ver no Github</a>
+
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const avatar = document.querySelector('#avatar');
+            const name = document.querySelector('#name');
+            const username = document.querySelector('#username');
+            const resp = document.querySelector("#resp");
+                     const resp2 = document.querySelector("#resp2");
+            const followers = document.querySelector("#followers");
+            const followers2 = document.querySelector("#followers2");
+            const following = document.querySelector("#following");
+            const following2 = document.querySelector("#following2");
+            const link=document.querySelector('#link')
+
+
+            fetch("https://api.github.com/users/Retsiul")
+                .then(function (resposta) {
+                    return resposta.json();
+                })
+                .then(function (json) {
+                    avatar.src = json.avatar_url
+                    name.innerText = json.name
+                    name2.innerText = json.name
+                    username.innerText = json.login
+                    username2.innerText = json.login
+                    resp.innerText = json.public_repos
+                    resp2.innerText = json.public_repos
+                    followers.innerText = json.followers
+                    followers2.innerText = json.followers
+                    following.innerText = json.following
+                    following2.innerText = json.following
+                    link.href=json.html_url
+
+
+
+
+                })
+        })
+    </script>
+</body>
+
+</html>
