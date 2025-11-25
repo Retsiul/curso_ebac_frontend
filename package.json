@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "build": "babel src --watch -d dist"
+    },
+    "devDependencies": {
+        "browserslist": ">0.25%",
+        "@babel/cli": "^7.28.3",
+        "@babel/core": "^7.28.5",
+        "@babel/preset-env": "^7.28.5"
+    }
+}
