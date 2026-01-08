@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-describe('',()=>{
+describe('suite de testes',()=>{
     beforeEach(()=>{
-        cy.visit("https:///ebac-agenda-contatos-tan.vercel.app/")
+        cy.visit("https://ebac-agenda-contatos-tan.vercel.app/")
     })
      it('deve incluir o nome de um contato',()=>{
          cy.get('input[placeholder="Nome"]').type('Luis Fernando Alcântara do Nascimento')
